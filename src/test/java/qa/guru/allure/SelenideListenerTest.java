@@ -49,13 +49,14 @@ public class SelenideListenerTest {
         $(By.partialLinkText("Issues")).click();
         Allure.addAttachment("Page Source", "text/html", WebDriverRunner.source(), "html");
         $(withText("Test Title")).should(Condition.exist);
+        Allure.addAttachment("Page Source", "text/html", WebDriverRunner.source(), "html");
     }
 
     //продвинутый вариант (более динамический)
     @Test
     public void testDynamicLabels() {
         Allure.label("owner", "polyakovaea");
-        Allure.label("severity", SeverityLevel.MINOR.value());
+        Allure.label("severity", SeverityLevel.CRITICAL.value());
         Allure.feature("Задачи в репозитории");
         Allure.story("Удаление новой задачи");
         Allure.getLifecycle().updateTestCase(testCase -> {
@@ -68,7 +69,7 @@ public class SelenideListenerTest {
     //входные параметры для отображения в отчете
     @Test
     public void testParameters() {
-        Allure.parameter("Регион", "Московская область");
-        Allure.parameter("Город", "Москва");
+        Allure.parameter("Регион", "Ленинградская область");
+        Allure.parameter("Город", "Санкт-Петербург");
     }
 }

@@ -37,21 +37,21 @@ public class StepsTest {
     }
 
     @Test
-    @DisplayName("Ïðîâåðêà íàçâàíèÿ Issue â ðåïîçèòîðèè")
+    @DisplayName("ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ñ Issue Ð² Ñ€ÐµÐ¿Ð¾Ð·Ð¸Ñ‚Ð¾Ñ€Ð¸Ð¸")
     public void testLambdaFSteps() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
-        step("Èùåì ðåïîçèòîðèé " + REPOSITORY, () -> {
+        step("Ð˜Ñ‰ÐµÐ¼ Ñ€ÐµÐ¿Ð¾Ð·Ð¸Ñ‚Ð¾Ñ€Ð¸Ð¹ " + REPOSITORY, () -> {
             $(".header-search-input").setValue(REPOSITORY).submit();
         });
-        step("Îòêðûâàåì ðåïîçèòîðèé " + REPOSITORY, () -> {
+        step("ÐžÑ‚ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ñ€ÐµÐ¿Ð¾Ð·Ð¸Ñ‚Ð¾Ñ€Ð¸Ð¹ " + REPOSITORY, () -> {
             $(By.linkText(REPOSITORY)).click();
         });
-        step("Ïåðåõîäèì âî âêëàäêó Issues", () -> {
+        step("ÐŸÐµÑ€ÐµÑ…Ð¾Ð´Ð¸Ð¼ Ð²Ð¾ Ð²ÐºÐ»Ð°Ð´ÐºÑƒ Issues", () -> {
             $(By.partialLinkText("Issues")).click();
             Allure.addAttachment("Page Source", "text/html", WebDriverRunner.source(), "html");
         });
-        step("Èùåì Issue ïî íàçâàíèþ " + ISSUE_TITLE, () -> {
+        step("Ð˜Ñ‰ÐµÐ¼ Issue Ð¿Ð¾ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸ÑŽ " + ISSUE_TITLE, () -> {
             $(withText(ISSUE_TITLE)).should(Condition.exist);
         });
     }

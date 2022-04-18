@@ -13,22 +13,22 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class AnnotationWebSteps {
 
-    @Step("Ищем репозиторий {repo}")
+    @Step("РС‰РµРј СЂРµРїРѕР·РёС‚РѕСЂРёР№ {repo}")
     public void searchForRepository(String repo) {
         $(".header-search-input").setValue(repo).submit();
     }
 
-    @Step("Открываем репозиторий {repo}")
+    @Step("РћС‚РєСЂС‹РІР°РµРј СЂРµРїРѕР·РёС‚РѕСЂРёР№ {repo}")
     public void openRepository(String repo) {
         $(By.linkText(repo)).click();
     }
 
-    @Step("Переходим во вкладку Issues")
+    @Step("РџРµСЂРµС…РѕРґРёРј РІРѕ РІРєР»Р°РґРєСѓ Issues")
     public void openIssueTab() {
         $(By.partialLinkText("Issues")).click();
     }
 
-    @Step("Ищем Issue по названию {title}")
+    @Step("РС‰РµРј Issue РїРѕ РЅР°Р·РІР°РЅРёСЋ {title}")
     public void shouldExistIssueWithTitle(String title) {
         $(withText(title)).should(Condition.exist);
     }

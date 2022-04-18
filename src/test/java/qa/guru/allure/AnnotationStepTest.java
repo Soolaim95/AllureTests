@@ -31,7 +31,7 @@ public class AnnotationStepTest {
     }
 
     @Test
-    @DisplayName("Проверка названия Issue в репозитории")
+    @DisplayName("РџСЂРѕРІРµСЂРєР° РЅР°Р·РІР°РЅРёСЏ Issue РІ СЂРµРїРѕР·РёС‚РѕСЂРёРё")
     public void testAnnotatedSteps() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 

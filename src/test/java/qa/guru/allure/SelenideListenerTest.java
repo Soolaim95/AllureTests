@@ -55,7 +55,7 @@ public class SelenideListenerTest {
     @Test
     public void testDynamicLabels() {
         Allure.label("owner", "polyakovaea");
-        Allure.label("severity", SeverityLevel.MINOR.value());
+        Allure.label("severity", SeverityLevel.CRITICAL.value());
         Allure.feature("Задачи в репозитории");
         Allure.story("Удаление новой задачи");
         Allure.getLifecycle().updateTestCase(testCase -> {

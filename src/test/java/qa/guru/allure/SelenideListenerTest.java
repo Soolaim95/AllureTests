@@ -49,6 +49,7 @@ public class SelenideListenerTest {
         $(By.partialLinkText("Issues")).click();
         Allure.addAttachment("Page Source", "text/html", WebDriverRunner.source(), "html");
         $(withText("Test Title")).should(Condition.exist);
+        Allure.addAttachment("Page Source", "text/html", WebDriverRunner.source(), "html");
     }
 
     //продвинутый вариант (более динамический)

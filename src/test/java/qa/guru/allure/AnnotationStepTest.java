@@ -38,6 +38,7 @@ public class AnnotationStepTest {
         AnnotationWebSteps steps = new AnnotationWebSteps();
 
         steps.searchForRepository(REPOSITORY);
+        steps.takeScreenshot();
         steps.openRepository(REPOSITORY);
         steps.openIssueTab();
         Allure.addAttachment("Page Source", "text/html", WebDriverRunner.source(), "html");

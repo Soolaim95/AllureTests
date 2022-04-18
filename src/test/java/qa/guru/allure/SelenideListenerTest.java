@@ -68,7 +68,7 @@ public class SelenideListenerTest {
     //входные параметры для отображения в отчете
     @Test
     public void testParameters() {
-        Allure.parameter("Регион", "Московская область");
-        Allure.parameter("Город", "Москва");
+        Allure.parameter("Регион", "Ленинградская область");
+        Allure.parameter("Город", "Санкт-Петербург");
     }
 }

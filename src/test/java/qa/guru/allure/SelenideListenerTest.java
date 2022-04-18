@@ -33,13 +33,13 @@ public class SelenideListenerTest {
     @Test
     @Owner("polyakovaea")
     @Severity(SeverityLevel.CRITICAL)
-    @Feature("Задачи в репозитории") //название функциональности
-    @Story("Создание новой задачи") //краткое общее описание для группировки тестов
-    @DisplayName("Проверка наличия созданного Issue в репозитории")
+    @Feature("Р—Р°РґР°С‡Рё РІ СЂРµРїРѕР·РёС‚РѕСЂРёРё") //РЅР°Р·РІР°РЅРёРµ С„СѓРЅРєС†РёРѕРЅР°Р»СЊРЅРѕСЃС‚Рё
+    @Story("РЎРѕР·РґР°РЅРёРµ РЅРѕРІРѕР№ Р·Р°РґР°С‡Рё") //РєСЂР°С‚РєРѕРµ РѕР±С‰РµРµ РѕРїРёСЃР°РЅРёРµ РґР»СЏ РіСЂСѓРїРїРёСЂРѕРІРєРё С‚РµСЃС‚РѕРІ
+    @DisplayName("РџСЂРѕРІРµСЂРєР° РЅР°Р»РёС‡РёСЏ СЃРѕР·РґР°РЅРЅРѕРіРѕ Issue РІ СЂРµРїРѕР·РёС‚РѕСЂРёРё")
     @Description(
-            "Этот тест проверяет создание Issue, когда происходит..."
-    ) //подробное описание
-    @Link(value = "github", url = "https://github.com") //url тестируемой страницы
+            "Р­С‚РѕС‚ С‚РµСЃС‚ РїСЂРѕРІРµСЂСЏРµС‚ СЃРѕР·РґР°РЅРёРµ Issue, РєРѕРіРґР° РїСЂРѕРёСЃС…РѕРґРёС‚..."
+    ) //РїРѕРґСЂРѕР±РЅРѕРµ РѕРїРёСЃР°РЅРёРµ
+    @Link(value = "github", url = "https://github.com") //url С‚РµСЃС‚РёСЂСѓРµРјРѕР№ СЃС‚СЂР°РЅРёС†С‹
 
     public void testIssueExist() {
         SelenideLogger.addListener("allure", new AllureSelenide());
@@ -51,24 +51,24 @@ public class SelenideListenerTest {
         $(withText("Test Title")).should(Condition.exist);
     }
 
-    //продвинутый вариант (более динамический)
+    //РїСЂРѕРґРІРёРЅСѓС‚С‹Р№ РІР°СЂРёР°РЅС‚ (Р±РѕР»РµРµ РґРёРЅР°РјРёС‡РµСЃРєРёР№)
     @Test
     public void testDynamicLabels() {
         Allure.label("owner", "polyakovaea");
         Allure.label("severity", SeverityLevel.MINOR.value());
-        Allure.feature("Задачи в репозитории");
-        Allure.story("Удаление новой задачи");
+        Allure.feature("Р—Р°РґР°С‡Рё РІ СЂРµРїРѕР·РёС‚РѕСЂРёРё");
+        Allure.story("РЈРґР°Р»РµРЅРёРµ РЅРѕРІРѕР№ Р·Р°РґР°С‡Рё");
         Allure.getLifecycle().updateTestCase(testCase -> {
-            testCase.setName("Проверка удаления Issue для авторизованного пользователя");
+            testCase.setName("РџСЂРѕРІРµСЂРєР° СѓРґР°Р»РµРЅРёСЏ Issue РґР»СЏ Р°РІС‚РѕСЂРёР·РѕРІР°РЅРЅРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ");
         });
-        Allure.description("Этот тест проверяет удаление Issue, когда происходит....");
+        Allure.description("Р­С‚РѕС‚ С‚РµСЃС‚ РїСЂРѕРІРµСЂСЏРµС‚ СѓРґР°Р»РµРЅРёРµ Issue, РєРѕРіРґР° РїСЂРѕРёСЃС…РѕРґРёС‚....");
         Allure.link("github", "https://github.com");
     }
 
-    //входные параметры для отображения в отчете
+    //РІС…РѕРґРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РІ РѕС‚С‡РµС‚Рµ
     @Test
     public void testParameters() {
-        Allure.parameter("Регион", "Московская область");
-        Allure.parameter("Город", "Москва");
+        Allure.parameter("Р РµРіРёРѕРЅ", "РњРѕСЃРєРѕРІСЃРєР°СЏ РѕР±Р»Р°СЃС‚СЊ");
+        Allure.parameter("Р“РѕСЂРѕРґ", "РњРѕСЃРєРІР°");
     }
 }

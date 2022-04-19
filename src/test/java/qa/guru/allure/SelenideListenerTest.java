@@ -32,7 +32,7 @@ public class SelenideListenerTest {
 
     @Test
     @Owner("polyakovaea")
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.MINOR)
     @Feature("Задачи в репозитории") //название функциональности
     @Story("Создание новой задачи") //краткое общее описание для группировки тестов
     @DisplayName("Проверка наличия созданного Issue в репозитории")
@@ -56,7 +56,7 @@ public class SelenideListenerTest {
     @Test
     public void testDynamicLabels() {
         Allure.label("owner", "polyakovaea");
-        Allure.label("severity", SeverityLevel.CRITICAL.value());
+        Allure.label("severity", SeverityLevel.MINOR.value());
         Allure.feature("Задачи в репозитории");
         Allure.story("Удаление новой задачи");
         Allure.getLifecycle().updateTestCase(testCase -> {
@@ -70,6 +70,6 @@ public class SelenideListenerTest {
     @Test
     public void testParameters() {
         Allure.parameter("Регион", "Ленинградская область");
-        Allure.parameter("Город", "Санкт-Петербург");
+        Allure.parameter("Город", "Выборг");
     }
 }

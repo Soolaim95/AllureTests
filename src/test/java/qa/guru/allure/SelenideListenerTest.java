@@ -17,7 +17,7 @@ public class SelenideListenerTest {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = "1500x800";
     }
 
     @BeforeEach
